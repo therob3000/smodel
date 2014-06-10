@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        foo==
+        foo=
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -24,10 +24,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _s_portal_session=;
-        path=/; secure; HttpOnly
-      - user_credentials=;
-        path=/; expires=Sat, 18-May-2013 01:20:31 GMT; secure; HttpOnly
+      - _s_portal_session=; path=/; secure; HttpOnly
+      - user_credentials=; path=/; expires=Sat, 18-May-2013 01:20:31 GMT; secure;
+        HttpOnly
       X-Request-Id:
       - 7ce8d77dcd2e10cb81c0b3c98c9d4198
       X-Runtime:
@@ -53,8 +52,7 @@ http_interactions:
       string: ''
     headers:
       Cookie:
-      - user_credentials=;
-        _s_portal_session=
+      - user_credentials=; _s_portal_session=
   response:
     status:
       code: 200
@@ -65,12 +63,11 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"cb4c586270e47aac1f5eba1873023ecd"'
+      - '"cb4c586270e47aac1f5eba1873023ecd"'
       Cache-Control:
       - must-revalidate, private, max-age=0
       Set-Cookie:
-      - _s_portal_session=;
-        path=/; secure; HttpOnly
+      - _s_portal_session=; path=/; secure; HttpOnly
       X-Request-Id:
       - 6a1e7fa356d421956dd610fbbc1e40f7
       X-Runtime:
@@ -85,7 +82,114 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '[{"color":null,"display_name":null,"id":13,"option_codes":"MS01,RENA","user_id":21,"vehicle_id":1408,"vin":"5YJSA","tokens":["93b0e5b65b8a991b","d26a02e14e35b683"],"state":"online"}]'
+      string: '[{"color":null,"display_name":null,"id":13,"option_codes":"MS01,RENA","user_id":21,"vehicle_id":1408,"vin":"5YJSA","tokens":["93b0e5b65b8a991b","d26a02e14e35b683"],"state":"online"}]'
     http_version: 
   recorded_at: Mon, 18 Feb 2013 01:20:35 GMT
+- request:
+    method: get
+    uri: https://portal.vn.teslamotors.com/vehicles
+    body:
+      encoding: UTF-8
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 302
+      message: Found
+    headers:
+      Date:
+      - Tue, 10 Jun 2014 10:14:32 GMT
+      Status:
+      - 302 Found
+      Location:
+      - https://portal.vn.teslamotors.com/login
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      Set-Cookie:
+      - _s_portal_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFVEkiJTBmNjgzNjdhYTFmNWUwNDYwMDc4MGIxZjA3N2ZkYjhlBjsAVEkiCmZsYXNoBjsAVG86JUFjdGlvbkRpc3BhdGNoOjpGbGFzaDo6Rmxhc2hIYXNoCToKQHVzZWRvOghTZXQGOgpAaGFzaHsAOgxAY2xvc2VkRjoNQGZsYXNoZXN7BjoLbm90aWNlSSIpUGxlYXNlIGxvZ2luIGluIHRvIGFjY2VzcyB0aGlzIHBhZ2UuBjsAVDoJQG5vdzA%3D--406eddbd7aa85c116753c8d161ddbccd86b8b462;
+        path=/; secure; HttpOnly
+      X-Request-Id:
+      - 279939d9b768b3f50a6bc64a81ac1231
+      X-Runtime:
+      - '0.003467'
+      X-Rack-Cache:
+      - miss
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - lighttpd/1.4.30
+    body:
+      encoding: UTF-8
+      string: <html><body>You are being <a href="https://portal.vn.teslamotors.com/login">redirected</a>.</body></html>
+    http_version: 
+  recorded_at: Tue, 10 Jun 2014 10:15:33 GMT
+- request:
+    method: post
+    uri: https://portal.vn.teslamotors.com/login
+    body:
+      encoding: ASCII-8BIT
+      string: user_session%5Bemail%5D=user%40example.com&user_session%5Bpassword%5D=password
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 10 Jun 2014 10:19:21 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"85efd3c5c0c9a1a40ee6adf11a7e4bfd"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _s_portal_session=BAh7CDoQX2NzcmZfdG9rZW5JIjFiMlphYTdlZVY2SEtuSzd3QzdZNUVqOWM2MDZPcjcrclRYT0MwOVhRQjdVPQY6BkVGSSIKZmxhc2gGOwZUbzolQWN0aW9uRGlzcGF0Y2g6OkZsYXNoOjpGbGFzaEhhc2gJOgpAdXNlZG86CFNldAY6CkBoYXNoewA6DEBjbG9zZWRGOg1AZmxhc2hlc3sGOgplcnJvckkiHFlvdSBkbyBub3QgaGF2ZSBhY2Nlc3MuBjsGVDoJQG5vdzBJIg9zZXNzaW9uX2lkBjsGVEkiJTFhYjBiNDQzNjljOTNmODdkMGQ0OWVmYjQ3MDgwMDM2BjsGVA%3D%3D--c11723bd2d0e4e640f1f66f14d877b8028502f00;
+        path=/; secure; HttpOnly
+      X-Request-Id:
+      - cf059ca5ace722cb09a6269134e261a9
+      X-Runtime:
+      - '0.258340'
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - lighttpd/1.4.30
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Portal</title>
+        <script src="/assets/application-83fde505fbc72a28ac9a93ec700f3eeb.js" type="text/javascript"></script>
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta content="b2Zaa7eeV6HKnK7wC7Y5Ej9c606Or7+rTXOC09XQB7U=" name="csrf-token" />
+        <meta name="csrf-token" content="b2Zaa7eeV6HKnK7wC7Y5Ej9c606Or7+rTXOC09XQB7U=">
+
+        <link href='/images/favicon.ico' rel='shortcut icon'>
+
+        </head>
+        <body>
+        <header>
+        <li><a href="/login">Login</a></li>
+        </header>
+
+        <div class='flash error'>You do not have access.</div>
+
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Tue, 10 Jun 2014 10:20:22 GMT
 recorded_with: VCR 2.4.0

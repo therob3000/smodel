@@ -43,9 +43,19 @@ get "/status" do
 end
 
 post "/login" do
-  session[:username] = params[:username]
-  session[:password] = params[:password]
-  redirect to("/status")
+  begin
+    connection = TeslaAPI::Connection.new(params[:username], params[:password])
+    if connection.logged_in?
+      session[:username] = params[:username]
+      session[:password] = params[:password]
+      redirect to("/status")
+    else
+      # TODO: Need much better error handling.
+      raise "Wrong username or password."
+    end
+  rescue
+    erb :error, :locals => {:title => "Login failed", :message => "Could not log in to the Tesla API."}
+  end
 end
 
 def logged_in?
