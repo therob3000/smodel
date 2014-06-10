@@ -17,11 +17,8 @@ describe "LoginPage" do
   end
 
   context "with a stubbed connection", :vcr => {:cassette_name => "connection_and_status", :record => :none} do
-    it "should accept our bogus test login and redirect to /status" do
-      visit '/'
-      fill_in :username, :with => 'user@example.com'
-      fill_in :password, :with => 'password'
-      click_button 'Submit'
+    it "should accept our test login and redirect to /status" do
+      log_me_in
       expect(current_path).to eq "/status"
       expect(page).to have_content "Status"
     end
