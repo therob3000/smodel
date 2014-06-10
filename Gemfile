@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'sinatra'
-gem 'tesla-api'
+gem 'tesla-api', :git => 'https://github.com/psy-q/tesla-api.git'
 gem 'webrick'
 gem 'vcr', :groups => [:test]
 gem 'webmock', :groups => [:test]
