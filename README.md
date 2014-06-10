@@ -3,6 +3,8 @@ smodel
 
 Stupid and simple Sinatra-based Tesla Model S status page.
 
+[![Build Status](https://travis-ci.org/psy-q/smodel.svg?branch=master)](https://travis-ci.org/psy-q/smodel)
+
 Note that I have absolutely no clue about Sinatra, so this
 application is surely crap in the eyes of anyone with more
 than two hours Sinatra experience.
