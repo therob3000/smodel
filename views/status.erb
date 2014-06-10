@@ -1,0 +1,47 @@
+<h1>Status</h1>
+
+<h2>Charge state</h2>
+<% if status_hash.charge_state %>
+  <table>
+    <% status_hash.charge_state.each do |k, v| %>
+      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+    <% end %>
+  </table>
+<% else %>
+  <p>No data.</p>
+<% end %>
+
+
+<h2>Drive state</h2>
+<% if status_hash.drive_state %>
+  <table>
+    <% status_hash.drive_state.each do |k, v| %>
+      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+    <% end %>
+  </table>
+<% else %>
+  <p>No data.</p>
+<% end %>
+
+<h2>Climate state</h2>
+<% if status_hash.climate_state %>
+  <table>
+    <% status_hash.climate_state.each do |k, v| %>
+      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+    <% end %>
+  </table>
+<% else %>
+  <p>No data.</p>
+<% end %>
+
+
+<h2>Vehicle state</h2>
+<% if status_hash.vehicle_state %>
+  <table>
+    <% status_hash.vehicle_state.each do |k, v| %>
+      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+    <% end %>
+  </table>
+<% else %>
+  <p>No data.</p>
+<% end %>
