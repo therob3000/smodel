@@ -11,8 +11,7 @@ describe "StatusPage" do
     Capybara.app = Sinatra::Application.new
   end
 
-  context "when asking for charge state" do
-  use_vcr_cassette('connection_and_status', :record => :none)
+  context "when asking for charge state" , :vcr => {:cassette_name => "connection_and_status", :record => :none} do
     it "should display the charge percentage" do
       visit '/'
       fill_in :username, :with => 'user@example.com'

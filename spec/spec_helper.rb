@@ -21,6 +21,7 @@ require 'capybara/rspec'
 VCR.configure do |c|
   c.cassette_library_dir = 'fixtures/vcr_cassettes'
   c.hook_into :webmock
+  c.configure_rspec_metadata!
 end
 
 def log_me_in
@@ -31,8 +32,7 @@ def log_me_in
 end
 
 RSpec.configure do |config|
-  config.extend VCR::RSpec::Macros
-
+  config.treat_symbols_as_metadata_keys_with_true_values = true
   # Many RSpec users commonly either run the entire suite or an individual
   # file, and it's useful to allow more verbose output when running an
   # individual spec file.
