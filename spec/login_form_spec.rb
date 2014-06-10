@@ -17,7 +17,7 @@ describe "LoginPage" do
   end
 
   context "with a stubbed connection" do
-  use_vcr_cassette("connection", :record => :none)
+  use_vcr_cassette("connection_and_status", :record => :none)
     it "should accept our bogus test login and redirect to /status" do
       visit '/'
       fill_in :username, :with => 'user@example.com'

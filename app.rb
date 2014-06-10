@@ -23,11 +23,11 @@ end
 get "/status" do
   if valid_login?
     begin
-      require 'pry'; binding.pry
       vehicle = TeslaAPI::Connection.new(session[:username], session[:password]).vehicle
       status_hash = {}
       status_hash['charge_state'] = vehicle.charge_state
-      status_hash['vehicle_state'] = vehicle.vehicle_state
+      status_hash['vehicle_state'] = vehicle.state
+      require 'pry'; binding.pry
       status_hash['climate_state'] = vehicle.climate_state
       status_hash['drive_state'] = vehicle.drive_state
       erb :status, :locals => {:status_hash => status_hash}

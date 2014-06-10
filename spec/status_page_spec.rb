@@ -12,7 +12,7 @@ describe "StatusPage" do
   end
 
   context "when asking for charge state" do
-  use_vcr_cassette('connection', :record => :none)
+  use_vcr_cassette('connection_and_status', :record => :none)
     it "should display the charge percentage" do
       visit '/'
       fill_in :username, :with => 'user@example.com'
