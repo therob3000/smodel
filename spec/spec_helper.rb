@@ -23,6 +23,13 @@ VCR.configure do |c|
   c.hook_into :webmock
 end
 
+def log_me_in
+  visit '/'
+  fill_in :username, :with => 'user@example.com'
+  fill_in :password, :with => 'password'
+  click_button 'Submit'
+end
+
 RSpec.configure do |config|
   config.extend VCR::RSpec::Macros
 

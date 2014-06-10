@@ -17,13 +17,14 @@ describe "LoginPage" do
   end
 
   context "with a stubbed connection" do
-  use_vcr_cassette("connection", :record => :new_episodes)
+  use_vcr_cassette("connection", :record => :none)
     it "should accept our bogus test login and redirect to /status" do
       visit '/'
       fill_in :username, :with => 'user@example.com'
       fill_in :password, :with => 'password'
       click_button 'Submit'
       expect(current_path).to eq "/status"
+      expect(page).to have_content "Status"
     end
   end
 

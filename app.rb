@@ -1,11 +1,11 @@
 require 'sinatra'
 require 'tesla-api'
 
-set :server, 'thin'
+set :server, 'webrick'
 enable :sessions
 
 get "/" do
-  if logged_in?
+  if valid_login?
     redirect to("/status")
   else
     erb :index
@@ -13,14 +13,17 @@ get "/" do
 end
 
 get "/logout" do
-  session[:username] = nil
-  session[:password] = nil
-  redirect to("/")
+  if valid_login?
+    session[:username] = nil
+    session[:password] = nil
+    redirect to("/")
+  end
 end
 
 get "/status" do
-  if logged_in?
+  if valid_login?
     begin
+      require 'pry'; binding.pry
       vehicle = TeslaAPI::Connection.new(session[:username], session[:password]).vehicle
       status_hash = {}
       status_hash['charge_state'] = vehicle.charge_state
@@ -33,6 +36,7 @@ get "/status" do
       message = "#{e.response.body}"
       erb :error, :locals => {:title => title, :message => message}
     rescue Exception => e
+      require 'pry'; binding.pry
       title = "Unhandled exception"
       message = "#{e.to_s}"
       erb :error, :locals => {:title => title, :message => message}
@@ -58,6 +62,6 @@ post "/login" do
   end
 end
 
-def logged_in?
+def valid_login?
   session[:username] && session[:password]
 end

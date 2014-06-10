@@ -6,7 +6,7 @@ http_interactions:
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        foo==
+        foo=
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -24,10 +24,9 @@ http_interactions:
       Cache-Control:
       - no-cache
       Set-Cookie:
-      - _s_portal_session=;
-        path=/; secure; HttpOnly
-      - user_credentials=;
-        path=/; expires=Sat, 18-May-2013 01:17:09 GMT; secure; HttpOnly
+      - _s_portal_session=; path=/; secure; HttpOnly
+      - user_credentials=; path=/; expires=Sat, 18-May-2013 01:17:09 GMT; secure;
+        HttpOnly
       X-Request-Id:
       - 97a088fef9adf1f3c965078a83d09040
       X-Runtime:
@@ -53,8 +52,7 @@ http_interactions:
       string: ''
     headers:
       Cookie:
-      - user_credentials=;
-        _s_portal_session=
+      - user_credentials=; _s_portal_session=
   response:
     status:
       code: 200
@@ -65,12 +63,11 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"cb4c586270e47aac1f5eba1873023ecd"'
+      - '"cb4c586270e47aac1f5eba1873023ecd"'
       Cache-Control:
       - must-revalidate, private, max-age=0
       Set-Cookie:
-      - _s_portal_session=;
-        path=/; secure; HttpOnly
+      - _s_portal_session=; path=/; secure; HttpOnly
       X-Request-Id:
       - 277fc8d63edb1757eba9da7085e47295
       X-Runtime:
@@ -85,7 +82,7 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '[{"color":null,"display_name":null,"id":13,"option_codes":"MS01,RENA","user_id":21,"vehicle_id":1408,"vin":"5YJSA","tokens":["93b0e5b65b8a991b","d26a02e14e35b683"],"state":"online"}]'
+      string: '[{"color":null,"display_name":null,"id":13,"option_codes":"MS01,RENA","user_id":21,"vehicle_id":1408,"vin":"5YJSA","tokens":["93b0e5b65b8a991b","d26a02e14e35b683"],"state":"online"}]'
     http_version: 
   recorded_at: Mon, 18 Feb 2013 01:17:12 GMT
 - request:
@@ -96,8 +93,7 @@ http_interactions:
       string: ''
     headers:
       Cookie:
-      - user_credentials=;
-        _s_portal_session=
+      - user_credentials=; _s_portal_session=
   response:
     status:
       code: 200
@@ -108,12 +104,11 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge,chrome=1
       Etag:
-      - ! '"2cd2d8f0cdfd9de62d0f7d5bf2eb45ee"'
+      - '"2cd2d8f0cdfd9de62d0f7d5bf2eb45ee"'
       Cache-Control:
       - must-revalidate, private, max-age=0
       Set-Cookie:
-      - _s_portal_session=;
-        path=/; secure; HttpOnly
+      - _s_portal_session=; path=/; secure; HttpOnly
       X-Request-Id:
       - d87d2062f387a0cfd3ee346e18e3e19f
       X-Runtime:
@@ -128,7 +123,72 @@ http_interactions:
       - chunked
     body:
       encoding: US-ASCII
-      string: ! '{"charging_state":"Disconnected","charge_to_max_range":false,"max_range_charge_counter":0,"fast_charger_present":false,"battery_range":177.38,"est_battery_range":143.96,"ideal_battery_range":204.15,"battery_level":70,"battery_current":-0.2,"charge_starting_range":null,"charge_starting_soc":null,"charger_voltage":0,"charger_pilot_current":0,"charger_actual_current":0,"charger_power":0,"time_to_full_charge":null,"charge_rate":-1.0,"charge_port_door_open":false}'
+      string: '{"charging_state":"Disconnected","charge_to_max_range":false,"max_range_charge_counter":0,"fast_charger_present":false,"battery_range":177.38,"est_battery_range":143.96,"ideal_battery_range":204.15,"battery_level":70,"battery_current":-0.2,"charge_starting_range":null,"charge_starting_soc":null,"charger_voltage":0,"charger_pilot_current":0,"charger_actual_current":0,"charger_power":0,"time_to_full_charge":null,"charge_rate":-1.0,"charge_port_door_open":false}'
     http_version: 
   recorded_at: Mon, 18 Feb 2013 01:17:16 GMT
+- request:
+    method: post
+    uri: https://portal.vn.teslamotors.com/login
+    body:
+      encoding: ASCII-8BIT
+      string: user_session%5Bemail%5D=user%40example.com&user_session%5Bpassword%5D=password
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 10 Jun 2014 13:05:36 GMT
+      Status:
+      - 200 OK
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"1f49a01fd35652432fefab5272cce78d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _s_portal_session=BAh7CDoQX2NzcmZfdG9rZW5JIjF1L041bDlNcENqdUtBbWt6UWZyUEZVUyt3YkErOVYyenYyQ0RGR2FucXBNPQY6BkVGSSIKZmxhc2gGOwZUbzolQWN0aW9uRGlzcGF0Y2g6OkZsYXNoOjpGbGFzaEhhc2gJOgpAdXNlZG86CFNldAY6CkBoYXNoewA6DEBjbG9zZWRGOg1AZmxhc2hlc3sGOgplcnJvckkiHFlvdSBkbyBub3QgaGF2ZSBhY2Nlc3MuBjsGVDoJQG5vdzBJIg9zZXNzaW9uX2lkBjsGVEkiJTkwOTE3MTk1NTMxOWFkNjQ2NmUxZDA1MmI0OTkwODFhBjsGVA%3D%3D--2aa431e3e7f539a2e70c85e28e882983f608e890;
+        path=/; secure; HttpOnly
+      X-Request-Id:
+      - 680253b2f8070ad8a661bf4ac197a734
+      X-Runtime:
+      - '0.175480'
+      X-Rack-Cache:
+      - invalidate, pass
+      Transfer-Encoding:
+      - chunked
+      Server:
+      - lighttpd/1.4.30
+    body:
+      encoding: UTF-8
+      string: |
+        <!DOCTYPE html>
+        <html>
+        <head>
+        <title>Portal</title>
+        <script src="/assets/application-83fde505fbc72a28ac9a93ec700f3eeb.js" type="text/javascript"></script>
+        <meta content="authenticity_token" name="csrf-param" />
+        <meta content="u/N5l9MpCjuKAmkzQfrPFUS+wbA+9V2zv2CDFGanqpM=" name="csrf-token" />
+        <meta name="csrf-token" content="u/N5l9MpCjuKAmkzQfrPFUS+wbA+9V2zv2CDFGanqpM=">
+
+        <link href='/images/favicon.ico' rel='shortcut icon'>
+
+        </head>
+        <body>
+        <header>
+        <li><a href="/login">Login</a></li>
+        </header>
+
+        <div class='flash error'>You do not have access.</div>
+
+        </body>
+        </html>
+    http_version: 
+  recorded_at: Tue, 10 Jun 2014 13:06:37 GMT
 recorded_with: VCR 2.4.0
