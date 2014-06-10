@@ -24,12 +24,15 @@ get "/status" do
   if valid_login?
     begin
       vehicle = TeslaAPI::Connection.new(session[:username], session[:password]).vehicle
-      require 'pry'; binding.pry
       status_hash = {}
       status_hash['charge_state'] = charge_state_to_hash(vehicle.charge_state)
-      status_hash['vehicle_state'] = vehicle_state_to_hash(vehicle.state)
-      status_hash['climate_state'] = climate_state_to_hash(vehicle.climate_state)
-      status_hash['drive_state'] = drive_state_to_hash(vehicle.drive_state)
+      status_hash['vehicle_state'] = {:foo => 'bar'}
+      status_hash['climate_state'] = {:foo => 'bar'}
+      status_hash['drive_state'] = {:foo => 'bar'}
+      #require 'pry'; binding.pry
+      #status_hash['vehicle_state'] = vehicle_state_to_hash(vehicle.state)
+      #status_hash['climate_state'] = climate_state_to_hash(vehicle.climate_state)
+      #status_hash['drive_state'] = drive_state_to_hash(vehicle.drive_state)
       erb :status, :locals => {:status_hash => status_hash}
     rescue TeslaAPI::Errors::InvalidResponse => e
       title = "#{e.response.http_header.status_code} #{e.response.http_header.reason_phrase}"
