@@ -4,7 +4,7 @@
 <% if status_hash['charge_state'] %>
   <table>
     <% status_hash['charge_state'].each do |k, v| %>
-      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+      <%= "<tr><td class='label'>#{k}</td><td class='data'>#{v}</td></tr>" %>
     <% end %>
   </table>
 <% else %>
@@ -16,7 +16,7 @@
 <% if status_hash['drive_state'] %>
   <table>
     <% status_hash['drive_state'].each do |k, v| %>
-      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+      <%= "<tr><td class='label'>#{k}</td><td class='data'>#{v}</td></tr>" %>
     <% end %>
   </table>
 <% else %>
@@ -27,7 +27,7 @@
 <% if status_hash['climate_state'] %>
   <table>
     <% status_hash['climate_state'].each do |k, v| %>
-      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+      <%= "<tr><td class='label'>#{k}</td><td class='data'>#{v}</td></tr>" %>
     <% end %>
   </table>
 <% else %>
@@ -39,7 +39,7 @@
 <% if status_hash['vehicle_state'] %>
   <table>
     <% status_hash['vehicle_state'].each do |k, v| %>
-      <%= "<tr><td>#{k}</td><td>#{v}</td></tr>" %>
+      <%= "<tr><td class='label'>#{k}</td><td class='data'>#{v}</td></tr>" %>
     <% end %>
   </table>
 <% else %>

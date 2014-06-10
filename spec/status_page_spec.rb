@@ -21,8 +21,19 @@ describe "StatusPage" do
       log_me_in
     end
 
-    it "should display the range in miles" do
-      expect(page).to have_content "Status"
+    it "should display the charging state" do
+      value = value_from_label("charging_state")
+      expect(value).to eq "Disconnected"
     end
+
+    it "should display the battery range in miles" do
+      value = value_from_label("battery_range_miles")
+      expect(value).to eq "177.38"
+    end
+
   end
+end
+
+def value_from_label(label)
+  return first("td.label", :text => label).find(:xpath, "..").first("td.data").text
 end
