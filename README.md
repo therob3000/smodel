@@ -21,9 +21,6 @@ easier.
 
 Some ideas:
 
-* Use webmock and VCR to simulate requests to the Model S API and
-validate the response pages.
-
 * Allow actually updating some of the car's settings (maximum
 charge percentage, etc.)
 
