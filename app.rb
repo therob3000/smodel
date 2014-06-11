@@ -8,7 +8,7 @@ get "/" do
   if valid_login?
     redirect to("/status")
   else
-    erb :index
+    erb :login
   end
 end
 
