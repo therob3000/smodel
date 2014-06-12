@@ -22,13 +22,23 @@ describe "StatusPage" do
     end
 
     it "should display the charging state" do
-      value = value_from_label("charging_state")
-      expect(value).to eq "Disconnected"
+      expect(find("#charging_state").text).to eq "Disconnected"
     end
 
-    it "should display the battery range in miles" do
-      value = value_from_label("battery_range_miles")
-      expect(value).to eq "177.38"
+    it "should display the battery range in kilometers and miles" do
+      expect(find("#battery_range").text).to eq "285.47 km (177.38 mi)"
+    end
+
+    it "should display the estimated battery range in kilometers and miles" do
+      expect(find("#estimated_battery_range").text).to eq "231.68 km (143.96 mi)"
+    end
+
+    it "should display the ideal battery range in kilometers and miles" do
+      expect(find("#ideal_battery_range").text).to eq "328.55 km (204.15 mi)"
+    end
+
+    it "should display the battery charge percentage" do
+      expect(find("#battery_percentage").text).to eq "70% full"
     end
 
   end

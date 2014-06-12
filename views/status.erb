@@ -3,9 +3,22 @@
 <h2>Charge state</h2>
 <% if status_hash['charge_state'] %>
   <table>
-    <% status_hash['charge_state'].each do |k, v| %>
-      <%= "<tr><td class='label'>#{k}</td><td class='data'>#{v}</td></tr>" %>
-    <% end %>
+    <tr>
+      <td class='label'>Charging state</td>
+      <td class='data'><span id='charging_state'><%= status_hash['charge_state']['charging_state'] %></span>, <span id="battery_percentage"><%= status_hash['charge_state']['battery_percentage'] %>% full</span></td>
+    </tr>
+
+    <tr>
+      <td class='label'>Range</td>
+      <td class='data'>
+        Rated: <span id="battery_range"><%= status_hash['charge_state']['battery_range_kilometers'] %> km (<%= status_hash['charge_state']['battery_range_miles'] %> mi)</span><br>
+        Estimated: <span id="estimated_battery_range"><%= status_hash['charge_state']['estimated_battery_range_kilometers'] %> km (<%= status_hash['charge_state']['estimated_battery_range_miles'] %> mi)</span><br>
+        Ideal: <span id="ideal_battery_range"><%= status_hash['charge_state']['ideal_battery_range_kilometers'] %> km (<%= status_hash['charge_state']['ideal_battery_range_miles'] %> mi)</span><br>
+      
+      </td>
+    </tr>
+
+
   </table>
 <% else %>
   <p>No data.</p>

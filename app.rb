@@ -29,7 +29,6 @@ get "/status" do
       status_hash['vehicle_state'] = {:foo => 'bar'}
       status_hash['climate_state'] = {:foo => 'bar'}
       status_hash['drive_state'] = {:foo => 'bar'}
-      #require 'pry'; binding.pry
       #status_hash['vehicle_state'] = vehicle_state_to_hash(vehicle.state)
       #status_hash['climate_state'] = climate_state_to_hash(vehicle.climate_state)
       #status_hash['drive_state'] = drive_state_to_hash(vehicle.drive_state)
@@ -76,8 +75,12 @@ def charge_state_to_hash(state)
   hash = {}
   hash['charging_state'] = state.charging_state
   hash['battery_range_miles'] = state.battery_range_miles
+  hash['battery_range_kilometers'] = state.battery_range_kilometers
   hash['estimated_battery_range_miles'] = state.estimated_battery_range_miles
+  hash['estimated_battery_range_kilometers'] = state.estimated_battery_range_kilometers
   hash['ideal_battery_range_miles'] = state.ideal_battery_range_miles
+  hash['ideal_battery_range_kilometers'] = state.ideal_battery_range_kilometers
+  hash['battery_percentage'] = state.battery_percentage
   hash
   # WIP
 end
