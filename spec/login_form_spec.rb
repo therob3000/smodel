@@ -16,7 +16,7 @@ describe "LoginPage" do
     expect(page).to have_content "Password"
   end
 
-  context "with a stubbed connection", :vcr => {:cassette_name => "connection_and_status", :record => :none} do
+  context "with a stubbed connection", :vcr => {:cassette_name => "connection_and_status_not_charging", :record => :none} do
     it "should accept our test login and redirect to /status" do
       log_me_in
       expect(current_path).to eq "/status"

@@ -12,7 +12,7 @@ describe "StatusPage" do
   end
 
 
-  context "when asking for vehicle status" , :vcr => {:cassette_name => "connection_and_status", :record => :none} do
+  context "when the vehicle isn't charging" , :vcr => {:cassette_name => "connection_and_status_not_charging", :record => :none} do
     # Quite brittle because it expects to dance the happy dance with the HTTP requests from
     # the fixtures. That's also the reason you can't revisit /status in any of these tests, as
     # the specific sequence of HTTP requests that are necessary for the /status page can't
