@@ -81,6 +81,7 @@ def charge_state_to_hash(state)
   hash['ideal_battery_range_miles'] = state.ideal_battery_range_miles
   hash['ideal_battery_range_kilometers'] = state.ideal_battery_range_kilometers
   hash['battery_percentage'] = state.battery_percentage
+  hash['hours_to_full_charge'] = state.hours_to_full_charge
   hash
   # WIP
 end

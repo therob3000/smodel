@@ -41,6 +41,10 @@ describe "StatusPage" do
       expect(find("#battery_percentage").text).to eq "70% full"
     end
 
+    it "should display hours to full charge only if the car is charging" do
+      expect(find("#hours_to_full_charge").text).to eq "Not charging"
+    end
+
   end
 end
 

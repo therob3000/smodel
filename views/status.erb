@@ -9,6 +9,13 @@
     </tr>
 
     <tr>
+      <td class='label'>Hours to full charge</td>
+      <td class='data'>
+        <span id='hours_to_full_charge'><%= status_hash['charge_state']['charging_state'] == "Connected" ? status_hash['charge_state']['hours_to_full_charge'] : "Not charging" %></span>
+      </td>
+    </tr>
+
+    <tr>
       <td class='label'>Range</td>
       <td class='data'>
         Rated: <span id="battery_range"><%= status_hash['charge_state']['battery_range_kilometers'] %> km (<%= status_hash['charge_state']['battery_range_miles'] %> mi)</span><br>
